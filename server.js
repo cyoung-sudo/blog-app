@@ -10,29 +10,29 @@ const app = express()
 dotenv.config({path:"config.env"})
 
 // MongoDB Atlas connection
-// mongoose.connect(process.env.MONGO_URI)
-//   .then(() => {
-//     console.log("Database connected...")
-//   }).catch(err => {
-//     console.log(err)
-//   })
-
-const connectDB = async () => {
-  try {
-    // MongoDB connection string
-    const con = await mongoose.connect(process.env.MONGO_URI)
-
-    console.log(`MongoDB connected: ${con.connection.host}`)
-  } catch(err) {
+mongoose.connect(process.env.MONGO_URI)
+  .then(() => {
+    console.log("Database connected...")
+  }).catch(err => {
     console.log(err)
-    process.exit(1)
-  }
-}  
+  })
+
+// const connectDB = async () => {
+//   try {
+//     // MongoDB connection string
+//     const con = await mongoose.connect(process.env.MONGO_URI)
+
+//     console.log(`MongoDB connected: ${con.connection.host}`)
+//   } catch(err) {
+//     console.log(err)
+//     process.exit(1)
+//   }
+// }  
+
+// connectDB()
 
 // Defined port value in config.env
 const PORT = process.env.PORT||8080
-
-connectDB()
 
 app.set("view engine", "ejs")
 
