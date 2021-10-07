@@ -1,13 +1,20 @@
 <%- include("include/_header") %>
 
 <body>
+  <%- include("include/_navigation") %>
+
   <div class="container m-4">
-    <h1 class="mb-1"><%= article.title %></h1>
-    <div class="text-muted mb-4"><%= article.createdAt.toLocaleDateString() %></div>
-    <a href="/" class="btn btn-secondary"><i class="fas fa-backward"></i> All Articles</a>
-    <a href="/articles/edit/<%= article.id %>" class="btn btn-warning">Edit <i class="fas fa-edit"></i></a>
+    <div class="d-flex flex-column">
+      <div class="text-center">
+        <h1 class="mb-1"><%= article.title %></h1>
+        <div class="text-muted mb-4"><%= article.createdAt.toLocaleDateString() %></div>
+        <a href="/" class="btn btn-secondary"><i class="fas fa-backward"></i> All Articles</a>
+        <a href="/articles/edit/<%= article.id %>" class="btn btn-warning">Edit <i class="fas fa-edit"></i></a>
+      </div>
+    </div>
+    
     <hr class="mt-4">
-    <div class="mt-4">
+    <div class="mt-4 px-4">
       <%- article.sanitizedHtml %>
     </div>
   </div>

@@ -1,8 +1,12 @@
 <%- include("include/_header") %>
 
 <body>
+  <%- include("include/_navigation") %>
+
   <div class="container m-4">
-    <h1 class="mb-4">New Article</h1>
+    <div class="d-flex justify-content-center">
+      <h1 class="mb-4">New Article</h1>
+    </div>
     
     <!-- Handled by "post" request to "/articles" path upon submission -->
     <form action="/articles" method="POST">
