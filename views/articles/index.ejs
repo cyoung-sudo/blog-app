@@ -3,7 +3,7 @@
 <body>
   <div class="container m-4">
     <h1 class="mb-4">Blog Articles</h1>
-    <a href="/articles/new" class="btn btn-success">New Article</a>
+    <a href="/articles/new" class="btn btn-success">Compose <i class="fas fa-plus-square"></i></a>
 
     <% articles.forEach(article => { %>
       <div class="card mt-4">
@@ -11,10 +11,10 @@
           <h3 class="card-title"><%= article.title %></h3>
           <div class="card-subtitle text-muted mb-2"><%= article.createdAt.toLocaleDateString() %></div>
           <div class="card-text mb-2"><%= article.description %></div>
-          <a href="articles/<%= article.slug %>" class="btn btn-primary">Read More</a>
-          <a href="articles/edit/<%= article.id %>" class="btn btn-info">Edit</a>
+          <a href="articles/<%= article.slug %>" class="btn btn-info">Read More <i class="fas fa-info-circle"></i></a>
+          <a href="articles/edit/<%= article.id %>" class="btn btn-warning">Edit <i class="fas fa-edit"></i></a>
           <form action="/articles/<%= article.id %>?_method=DELETE" method="POST" class="d-inline">
-            <button type="submit" class="btn btn-danger">Delete</button>
+            <button type="submit" class="btn btn-danger">Delete <i class="fas fa-trash-alt"></i></button>
           </form>
         </div>
       </div>
