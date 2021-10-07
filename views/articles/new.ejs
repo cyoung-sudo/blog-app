@@ -1,0 +1,14 @@
+<%- include("include/_header") %>
+
+<body>
+  <div class="container m-4">
+    <h1 class="mb-4">New Article</h1>
+    
+    <!-- Handled by "post" request to "/articles" path upon submission -->
+    <form action="/articles" method="POST">
+      <%- include("include/_form_fields") %>
+    </form>
+    
+  </div>
+</body>
+</html>
