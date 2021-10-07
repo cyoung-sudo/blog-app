@@ -29,10 +29,10 @@ const connectDB = async () => {
   }
 }  
 
-connectDB()
-
 // Defined port value in config.env
 const PORT = process.env.PORT||8080
+
+connectDB()
 
 app.set("view engine", "ejs")
 
