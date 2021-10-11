@@ -1,6 +1,7 @@
 const express = require("express")
 const mongoose = require("mongoose")
 const dotenv = require("dotenv") // Enables env variables
+const path = require("path")
 const Article = require("./models/article")
 const articleRouter = require("./routes/articles")
 const methodOverride = require("method-override") // Allows "DELETE" and "PUT" as methods
@@ -21,6 +22,9 @@ mongoose.connect(process.env.MONGO_URI)
 const PORT = process.env.PORT||8080
 
 app.set("view engine", "ejs")
+
+// Static files (css, img, js)
+app.use(express.static(path.join(__dirname, 'public')));
 
 // Parses incoming requests, based on body-parser
 // Access form params from route using req.body

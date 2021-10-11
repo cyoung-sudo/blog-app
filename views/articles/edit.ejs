@@ -3,12 +3,12 @@
 <body>
   <%- include("include/_navigation") %>
 
-  <div class="container m-4">
+  <div class="container mx-auto my-4">
     <div class="d-flex justify-content-center">
       <h1 class="mb-4">Edit Article</h1>
     </div>
     
-    <form action="/articles/<%= article.id %>?_method=PUT" method="POST">
+    <form action="/articles/<%= article.id %>?_method=PUT" method="POST" class="p-2">
       <%- include("include/_form_fields") %>
     </form>
     

@@ -3,7 +3,7 @@
 <body>
   <%- include("include/_navigation") %>
 
-  <div class="container m-4">
+  <div class="container mx-auto my-4">
     <div class="d-flex flex-column">
       <div class="text-center">
         <h1 class="mb-4">Articles</h1>
@@ -17,10 +17,10 @@
           <h3 class="card-title"><%= article.title %></h3>
           <div class="card-subtitle text-muted mb-2"><%= article.createdAt.toLocaleDateString() %></div>
           <div class="card-text mb-2"><%= article.description %></div>
-          <a href="articles/<%= article.slug %>" class="btn btn-info">Read More <i class="fas fa-info-circle"></i></a>
-          <a href="articles/edit/<%= article.id %>" class="btn btn-warning">Edit <i class="fas fa-edit"></i></a>
+          <a href="articles/<%= article.slug %>" class="btn btn-info mt-1">Read More <i class="fas fa-info-circle"></i></a>
+          <a href="articles/edit/<%= article.id %>" class="btn btn-warning mt-1">Edit <i class="fas fa-edit"></i></a>
           <form action="/articles/<%= article.id %>?_method=DELETE" method="POST" class="d-inline">
-            <button type="submit" class="btn btn-danger">Delete <i class="fas fa-trash-alt"></i></button>
+            <button type="submit" class="btn btn-danger mt-1">Delete <i class="fas fa-trash-alt"></i></button>
           </form>
         </div>
       </div>

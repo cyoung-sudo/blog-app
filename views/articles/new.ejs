@@ -3,13 +3,13 @@
 <body>
   <%- include("include/_navigation") %>
 
-  <div class="container m-4">
+  <div class="container mx-auto my-4">
     <div class="d-flex justify-content-center">
       <h1 class="mb-4">New Article</h1>
     </div>
     
     <!-- Handled by "post" request to "/articles" path upon submission -->
-    <form action="/articles" method="POST">
+    <form action="/articles" method="POST" class="p-2">
       <%- include("include/_form_fields") %>
     </form>
     
